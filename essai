@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Élevage de Maine Coon - A REMPLACER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Élevage familial de Maine Coon situé à A REMPLACER (Québec). Chatons Maine Coon enregistrés, élevés en liberté dans la maison.">
+  <style>
+    :root {
+      --primary: #374151;
+      --accent: #b45309;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #111827;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(17,24,39,0.95);
+      color: #f9fafb;
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .logo span {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #d1d5db;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    nav li a {
+      color: #e5e7eb;
+      padding: 0.35rem 0.5rem;
+      border-radius: 999px;
+      transition: background 0.2s;
+    }
+    nav li a:hover {
+      background: rgba(249,250,251,0.1);
+      text-decoration: none;
+    }
+
+    /* LAYOUT */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+    section {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    h1, h2, h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    h1 { font-size: 2.1rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.1rem; }
+
+    .subtitle {
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      border: 1px solid #e5e7eb;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      margin-bottom: 0.5rem;
+    }
+    ul { padding-left: 1.1rem; margin-top: 0.25rem; }
+    li { margin-bottom: 0.3rem; }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 2.5rem 0 2rem;
+    }
+    .hero-text h1 span {
+      color: var(--accent);
+    }
+    .hero-cta {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #f9fafb;
+      box-shadow: 0 10px 15px -3px rgba(180,83,9,0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 15px 25px -5px rgba(180,83,9,0.45);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #374151;
+      border: 1px solid #d1d5db;
+    }
+    .hero-photo {
+      border-radius: 1rem;
+      background: #111827;
+      padding: 0.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo-inner {
+      border-radius: 0.85rem;
+      background-image: url("A_REMPLACER_URL_PHOTO_HERO");
+      background-size: cover;
+      background-position: center;
+      min-height: 260px;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 0.9rem;
+      background: rgba(17,24,39,0.85);
+      color: #f9fafb;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .hero-badge span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    /* TABLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.5rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+
+    /* CONTACT FORM */
+    .form-group {
+      margin-bottom: 0.75rem;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.15rem;
+      color: #374151;
+    }
+    input, textarea {
+      width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      padding: 0.45rem 0.6rem;
+      font: inherit;
+      resize: vertical;
+    }
+    textarea { min-height: 110px; }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      padding: 1.5rem 1rem;
+      font-size: 0.8rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      nav ul {
+        display: none; /* simplification mobile, à remplacer par un burger si besoin */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <div>🐾</div>
+      <div>
+        <div>Chatterie A REMPLACER</div>
+        <span>Maine Coon & famille</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#elevage">Élevage</a></li>
+        <li><a href="#chats">Nos chats</a></li>
+        <li><a href="#chatons">Chatons</a></li>
+        <li><a href="#conditions">Conditions</a></li>
+        <li><a href="#sante">Santé</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ACCUEIL -->
+  <section id="accueil">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Élevage familial de <span>Maine Coon</span> au Québec</h1>
+        <p class="subtitle">
+          Chatterie A REMPLACER, située à A REMPLACER (région de Saint-Jérôme / Laurentides), spécialisée dans des Maine Coon équilibrés, en bonne santé et parfaitement sociabilisés.
+        </p>
+        <div class="hero-cta">
+          <a href="#chatons" class="btn btn-primary">Voir les chatons disponibles</a>
+          <a href="#contact" class="btn btn-secondary">Remplir un formulaire d’adoption</a>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.8rem;color:#6b7280;">
+          Enregistré auprès de l’association A REMPLACER, chatons vendus avec contrat, carnet de santé et enregistrement individuel. <!-- enregistrement recommandé pour le pur-race au Canada [web:10] -->
+        </p>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-inner"></div>
+        <div class="hero-badge">
+          <span></span>
+          <div>
+            <div style="font-size:0.75rem;">Portée actuelle</div>
+            <div style="font-size:0.7rem;color:#d1d5db;">Chatons prêts à rejoindre leur famille à partir de A REMPLACER</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELEVAGE -->
+  <section id="elevage">
+    <h2>À propos de l’élevage</h2>
+    <p class="subtitle">
+      Présentation de la philosophie de l’élevage, de la vie quotidienne des chats et de l’éthique de reproduction.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <div class="tag">Notre histoire</div>
+        <p>
+          L’élevage A REMPLACER est un petit élevage familial de Maine Coon, où les chats vivent avec nous, au cœur de la maison, avec enfants et animaux de compagnie. 
+        </p>
+        <p style="margin-top:0.5rem;">
+          Nous privilégions un nombre limité de portées par année afin d’offrir à chaque chaton une attention individuelle et un travail de socialisation complet.
+        </p>
+      </div>
+      <div class="card">
+        <div class="tag">Philosophie</div>
+        <ul>
+          <li>Priorité à la santé, au tempérament et au type de la race.</li>
+          <li>Tests de santé recommandés pour la race (HCM, PKDef, SMA, échographies si applicable). <!-- inspiré des bonnes pratiques d’élevage responsables [web:15][web:18] --></li>
+          <li>Reproduction réfléchie, sans consanguinité excessive, avec suivi des lignées.</li>
+          <li>Transparence totale sur les conditions de vie, la socialisation et les pedigrees.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag">Visites & adoptants</div>
+        <ul>
+          <li>Visites possibles sur rendez-vous une fois les chatons suffisamment vaccinés.</li>
+          <li>Contrat d’adoption clair et détaillé, avec suivi à vie du chat.</li>
+          <li>Accompagnement des familles, avant et après l’arrivée du chaton.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS CHATS -->
+  <section id="chats">
+    <h2>Nos reproducteurs</h2>
+    <p class="subtitle">
+      Présentation de nos femelles et mâles Maine Coon, avec tests de santé et pedigree.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Femelles</h3>
+        <!-- Exemple de fiche, à dupliquer -->
+        <div style="margin-bottom:0.75rem;">
+          <strong>Nom de la femelle A</strong><br>
+          Couleur : A REMPLACER<br>
+          Date de naissance : A REMPLACER<br>
+          Tests : HCM, PKDef, SMA A REMPLACER (résultats)<br>
+          Association : TICA / CFA / CCC A REMPLACER
+        </div>
+        <div style="margin-bottom:0.75rem;">
+          <strong>Nom de la femelle B</strong><br>
+          Couleur : A REMPLACER<br>
+          Date de naissance : A REMPLACER<br>
+          Tests : A REMPLACER<br>
+          Association : A REMPLACER
+        </div>
+        <p style="font-size:0.85rem;color:#6b7280;">
+          Chaque reproductrice dispose d’un espace calme pour les mises bas et l’élevage des chatons.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Mâles</h3>
+        <div style="margin-bottom:0.75rem;">
+          <strong>Nom du mâle A</strong><br>
+          Couleur : A REMPLACER<br>
+          Date de naissance : A REMPLACER<br>
+          Tests : HCM, PKDef, SMA A REMPLACER (résultats)<br>
+          Association : A REMPLACER
+        </div>
+        <p style="font-size:0.85rem;color:#6b7280;">
+          Nous veillons à limiter le nombre de portées par mâle et à éviter les mariages trop proches, dans l’intérêt de la diversité génétique.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Conditions de vie</h3>
+        <ul>
+          <li>Chats vivant en liberté dans la maison, non en cage au quotidien.</li>
+          <li>Accès à des arbres à chat, jeux d’enrichissement et postes d’observation en hauteur.</li>
+          <li>Alimentation de qualité (croquettes et/ou ration ménagère / BARF à préciser).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHATONS DISPONIBLES -->
+  <section id="chatons">
+    <h2>Chatons disponibles</h2>
+    <p class="subtitle">
+      Photos, informations et étapes pour réserver un chaton Maine Coon.
+    </p>
+
+    <div class="card">
+      <h3>Portées en cours</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Portée</th>
+            <th>Parents</th>
+            <th>Date de naissance</th>
+            <th>Disponibilité</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Portée A – Thème A REMPLACER</td>
+            <td>Femelle X × Mâle Y</td>
+            <td>A REMPLACER</td>
+            <td>A REMPLACER (nombre de chatons, couleurs)</td>
+            <td>Réservations ouvertes / Liste d’attente</td>
+          </tr>
+          <tr>
+            <td>Portée B – Thème A REMPLACER</td>
+            <td>Femelle Z × Mâle Y</td>
+            <td>A REMPLACER</td>
+            <td>A REMPLACER</td>
+            <td>Complet / En observation</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:0.75rem;">
+        Pour connaître la disponibilité en temps réel, merci de nous contacter directement par courriel ou via le formulaire de contact.
+      </p>
+    </div>
+
+    <div class="grid" style="margin-top:1.5rem;">
+      <div class="card">
+        <h3>Ce qui est inclus</h3>
+        <ul>
+          <li>Contrat d’adoption et facture.</li>
+          <li>Enregistrement individuel comme Maine Coon pure race (association A REMPLACER).</li>
+          <li>Vaccins de base selon l’âge, vermifuges, examen vétérinaire.</li>
+          <li>Micropuce d’identification selon la réglementation municipale ou provinciale applicable.</li>
+          <li>Stérilisation avant départ ou clause de stérilisation dans le contrat, selon le type de vente.</li>
+          <li>Kit de départ (nourriture, jouet, odeur de la maison).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Étapes pour réserver</h3>
+        <ol style="padding-left:1.1rem;margin-top:0.25rem;">
+          <li>Remplir le questionnaire d’adoption (voir plus bas ou nous écrire).</li>
+          <li>Entretien par téléphone / visioconférence.</li>
+          <li>Versement d’un acompte A REMPLACER pour la réservation.</li>
+          <li>Suivi photo/vidéo régulier jusqu’au départ.</li>
+          <li>Remise du chaton à partir de A REMPLACER semaines, selon son développement.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDITIONS D’ADOPTION -->
+  <section id="conditions">
+    <h2>Conditions d’adoption</h2>
+    <p class="subtitle">
+      Règles claires pour le bien-être des chats et la sécurité des familles adoptantes.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Ce que nous demandons</th>
+          <th>Pourquoi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Environnement</td>
+          <td>Chats d’intérieur uniquement, sécurisation balcon/jardin si accès extérieur.</td>
+          <td>Limiter les risques d’accidents, vols, bagarres et maladies.</td>
+        </tr>
+        <tr>
+          <td>Stérilisation</td>
+          <td>Stérilisation obligatoire pour les chats vendus comme compagnie (si non faite avant départ).</td>
+          <td>Prévenir la reproduction non contrôlée et respecter la sélection de l’élevage.</td>
+        </tr>
+        <tr>
+          <td>Dégriffage</td>
+          <td>Interdiction contractuelle du dégriffage.</td>
+          <td>Pratique douloureuse et non éthique, alternatives possibles (griffoirs, coupe de griffes).</td>
+        </tr>
+        <tr>
+          <td>Retour du chat</td>
+          <td>En cas d’impossibilité de garder le chat, obligation de nous contacter en premier.</td>
+          <td>Assurer un suivi et éviter l’abandon ou la revente non contrôlée.</td>
+        </tr>
+        <tr>
+          <td>Suivi santé</td>
+          <td>Visites régulières chez le vétérinaire et vaccination selon les recommandations.</td>
+          <td>Garantir une vie longue et en santé au chat.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SANTÉ & BIEN-ÊTRE -->
+  <section id="sante">
+    <h2>Santé & bien-être</h2>
+    <p class="subtitle">
+      Informations générales sur la santé du Maine Coon et nos pratiques de prévention.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Tests de santé</h3>
+        <ul>
+          <li>Tests génétiques recommandés pour la race (HCM, PKDef, SMA – laboratoire A REMPLACER).</li>
+          <li>Échos cardiaques / examens spécialisés selon les lignées et recommandations vétérinaires.</li>
+          <li>Programme de vermifugation et vaccination à jour pour tous les chats et chatons.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Vie quotidienne</h3>
+        <ul>
+          <li>Alimentation de qualité adaptée aux grands chats et aux besoins spécifiques du Maine Coon.</li>
+          <li>Stimulation mentale et physique (arbres à chats, jeux interactifs, temps de jeu quotidien).</li>
+          <li>Habituation aux bruits de la maison, enfants, chiens (si présents), pour des chatons bien dans leurs pattes.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Réglementation au Québec</h3>
+        <p style="font-size:0.9rem;">
+          Nous respectons les lois provinciales et municipales applicables à la garde et à l’élevage de chats, y compris les obligations de permis si le nombre d’animaux le requiert. <!-- législation provinciale sur le nombre de chats et les permis [web:13][web:16] -->
+        </p>
+        <p style="font-size:0.85rem;color:#6b7280;margin-top:0.4rem;">
+          Les adoptants doivent vérifier les exigences de licence ou d’enregistrement des animaux de compagnie dans leur municipalité. <!-- obligation éventuelle de licence municipale pour les chats [web:7] -->
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Questions fréquentes (FAQ)</h2>
+    <p class="subtitle">
+      Réponses aux questions les plus courantes sur nos Maine Coon et nos procédures.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>À quel âge les chatons peuvent-ils partir ?</h3>
+        <p>
+          Les chatons quittent généralement l’élevage entre 12 et 16 semaines, selon leur développement, leur socialisation et leur état de santé.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Livrez-vous vos chatons ?</h3>
+        <p>
+          La priorité est la remise en main propre à l’élevage. Un transport peut parfois être organisé, au cas par cas, avec frais supplémentaires.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Acceptez-vous les visites ?</h3>
+        <p>
+          Oui, sur rendez-vous, en respectant les règles d’hygiène (changement de chaussures, désinfection des mains, etc.) pour protéger les chatons.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Vendez-vous pour reproduction ?</h3>
+        <p>
+          Des chatons pour reproduction peuvent être disponibles uniquement à des élevages sérieux, enregistrés et partageant notre vision éthique.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact & réservation</h2>
+    <p class="subtitle">
+      Pour toute question, demande d’information ou début de démarche d’adoption, contacte-nous via ce formulaire ou directement par courriel / téléphone.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Formulaire de contact</h3>
+        <!-- Exemple simple de formulaire : à connecter à ton outil (Formspree, hébergeur, etc.) -->
+        <form action="A_REMPLACER_ACTION_FORMULAIRE" method="post">
+          <div class="form-group">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Courriel</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel">
+          </div>
+          <div class="form-group">
+            <label for="ville">Ville / province</label>
+            <input type="text" id="ville" name="ville">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Parle-nous de ton environnement (enfants, autres animaux, logement), de ce que tu recherches comme chaton, et de tes questions."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Coordonnées</h3>
+        <p>
+          Chatterie A REMPLACER<br>
+          Région de A REMPLACER (ex. Saint-Jérôme, Laurentides, Québec)<br>
+          Courriel : <a href="mailto:A_REMPLACER_EMAIL">A_REMPLACER_EMAIL</a><br>
+          Téléphone : A_REMPLACER_TEL
+        </p>
+        <p style="margin-top:0.75rem;">
+          Suis-nous sur :
+        </p>
+        <ul>
+          <li>Facebook : <a href="A_REMPLACER_URL_FB" target="_blank" rel="noopener">A REMPLACER</a></li>
+          <li>Instagram : <a href="A_REMPLACER_URL_IG" target="_blank" rel="noopener">@A_REMPLACER</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      © <span id="year"></span> Chatterie A REMPLACER – Élevage familial de Maine Coon au Québec.
+    </div>
+    <div>
+      Mentions légales & politique de confidentialité – À adapter selon ton hébergeur et ta situation.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
